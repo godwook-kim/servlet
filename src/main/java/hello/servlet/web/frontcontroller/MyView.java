@@ -21,9 +21,11 @@ public class MyView {
     }
 
     public void render(Map<String, Object> model, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        System.out.println("MyView.render");
         modelTORequestAttribute(model, request);
         RequestDispatcher dispatcher = request.getRequestDispatcher(viewPath);
         dispatcher.forward(request,response);
+        System.out.println("MyView.render end");
     }
 
     private void modelTORequestAttribute(Map<String, Object> model, HttpServletRequest request) {
